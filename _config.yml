@@ -1,0 +1,22 @@
+markdown: redcarpet
+pygments: true
+permalink: pretty
+
+name: George Stathis
+url: http://george-stathis.com
+description: 'General commentary on writing software, taming the web and personal interests.'
+twitter: gstathis
+github: gpstathis
+gravatar_url: http://gravatar.com/avatar/ba71ad856b0e8d5f224b8c927c85a7c4
+ga: 'UA-7528444-1'
+
+#markdown: redcarpet
+#pygments: true
+#relative_permalinks: true
+#permalink: pretty
+#name: George Stathis
+#url: http://george-stathis.com
+#description: 'General commentary on writing software, taming the web and personal interests.'
+#twitter: gstathis
+#github: gpstathis
+#gravatar_url: http://gravatar.com/avatar/2e5bee37d0e9d49d64c2424db403287e
