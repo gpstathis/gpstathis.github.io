@@ -1,4 +1,4 @@
 gpstathis.github.io
 ===================
 
-Jekyll site for [george-stathis.com](george-stathis.com)
+Jekyll files for [george-stathis.com](george-stathis.com)
