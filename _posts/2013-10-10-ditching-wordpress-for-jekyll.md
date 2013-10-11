@@ -23,19 +23,28 @@ First order of business was to find a new host for my site. I happen to be alrea
 
 The only other lose ends I had to take care of were:
 
-- Migrating my WordPress content: that was easily done using the built-in wp import utility in Jekyll. I exported my old posts into a `wordpress.xml` file using the built-in WordPress [export feature](http://en.support.wordpress.com/export/), made sure [hpricot](https://github.com/hpricot/hpricot) was installed running `gem install hpricot` and finally just executed the following at the root of my Jekyll project:
+## Migrating WordPress content to Jekyll
 
-	```ruby
-	$ ruby -rubygems -e 'require "jekyll/jekyll-import/wordpressdotcom";
-	    JekyllImport::WordpressDotCom.process({ :source => "wordpress.xml" })'
-	```
+that was easily done using the built-in wp import utility in Jekyll. I exported my old posts into a `wordpress.xml` file using the built-in WordPress [export feature](http://en.support.wordpress.com/export/), made sure [hpricot](https://github.com/hpricot/hpricot) was installed running `gem install hpricot` and finally just executed the following at the root of my Jekyll project:
+
+```ruby
+$ ruby -rubygems -e 'require "jekyll/jekyll-import/wordpressdotcom";
+    JekyllImport::WordpressDotCom.process({ :source => "wordpress.xml" })'
+```
+
 This re-created all my old posts under `<jekyll_root>/_posts` as HTML files. I did have to manually tweak some of the HTML for proper formatting, so it wasn't perfect out-of-the-box but it wasn't too bad, just some missing `<p></p>` tags.
-- Picking a theme: you can go with the default Jekyll look or roll your own if you are so inclined. There are also a few available themes you can find around the web. I picked up [Left](https://github.com/holman/left) which I found via [http://jekyllthemes.org/](http://jekyllthemes.org/).
-- Pointing the DNS entries to GitHub's servers: this is only necessary if you have your own domain which I did. Like I mentioned earlier, I happen to already have a Linode instance which comes with Managed DNS. So all I had to do was setup a new Domain Zone and point to the A Records to `204.232.175.78` as explained [here](https://help.github.com/articles/setting-up-a-custom-domain-with-pages). This is what it looks like in DNS Manager:
-	![Linode DNS Manager](/images/linode-dns.png)
-	My domain is registered with register.com, so the next step was to log in and point to the Linode name servers:
-	![Register.com Name Server Settings](/images/register.com.settings.png)
-	Done! In 10 to 20 minutes, the domain was redirecting to the GitHub pages site. Last step: email hosting.
+
+Finally, I had to maintain the URL structure of my legacy posts and pages which was prefixed with the path `/blog` in WordPress but no longer in Jekyll. I first looked into the [jekyll_alias_generator](https://github.com/tsmango/jekyll_alias_generator) plugin which seemed to work perfectly locally but not once on GitHub pages. I found out quickly that GitHib runs Jekyll in `--safe` mode for security reasons, so if I want plugins to work one day, I'll have to just publish the locally generated `_site` folder instead of the Jekyll source files. So while I pondered the repurcusions of that on my friectionless blogging requirements, I instead resorted to using the `permalink` [front-matter variable](http://jekyllrb.com/docs/frontmatter/) and setting it to the full legacy URL of my previous posts. Done.
+
+## Picking a Jekyll theme
+You can go with the default Jekyll look or roll your own if you are so inclined. There are also a few available themes you can find around the web. I picked up [Left](https://github.com/holman/left) which I found via [http://jekyllthemes.org/](http://jekyllthemes.org/).
+
+## Pointing the DNS entries to GitHub's servers
+This is only necessary if you have your own domain which I did. Like I mentioned earlier, I happen to already have a Linode instance which comes with Managed DNS. So all I had to do was setup a new Domain Zone and point to the A Records to `204.232.175.78` as explained [here](https://help.github.com/articles/setting-up-a-custom-domain-with-pages). This is what it looks like in DNS Manager:
+![Linode DNS Manager](/images/linode-dns.png)
+My domain is registered with register.com, so the next step was to log in and point to the Linode name servers:
+![Register.com Name Server Settings](/images/register.com.settings.png)
+Done! In 10 to 20 minutes, the domain was redirecting to the GitHub pages site. Last step: email hosting.
 
 ## From Yahoo! Email to Outlook.com
 
