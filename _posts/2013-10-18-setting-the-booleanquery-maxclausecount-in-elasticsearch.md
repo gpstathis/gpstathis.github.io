@@ -27,3 +27,7 @@ index.query.bool.max_clause_count: 4096
 ```
 
 Note that since this is a [static Lucene setting](https://groups.google.com/d/msg/elasticsearch/LqywKHKWbeI/KbxgZnPH6WoJ), it can only be set in the Elasticsearch config file and get picked up at startup.
+
+## Update
+[@imotov](https://twitter.com/imotov) (who pointed out `index.query.bool.max_clause_count` to me in the first place) also suggests looking into the `rewrite` parameter if you are using a [multi term query](http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl-multi-term-rewrite.html) as an additional source of options for controlling how boolear queries are re-written in Elasticsearch.
+
