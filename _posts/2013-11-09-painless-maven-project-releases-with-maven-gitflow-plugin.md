@@ -10,6 +10,12 @@ tags:
 type: post
 ---
 
+## Update
+
+Since the time of this writing, this plugin was merged into [https://bitbucket.org/atlassian/jgit-flow/](https://bitbucket.org/atlassian/jgit-flow/), so please read [https://bitbucket.org/atlassian/jgit-flow/wiki/goals.wiki](https://bitbucket.org/atlassian/jgit-flow/wiki/goals.wiki) for the latest configuration options.
+
+## Intro
+
 We recently moved all our code repositories from Atlassian's hosted SVN to [BitBucket](bitbucket.org) and took the opportunity to revisit our deployment process. We had been operating using SVN trunk for ongoing development and stabilizing it whenever we wanted to cut releases. This approach worked well in the early days but started to show its' challenges as we added  developers to the team and worked on parallel tracks. So the move to Git presented the perfect time to consider a development process that would be a better fit for a DVCS. Enter Git-Flow.
 
 ## Git-Flow
