@@ -29,3 +29,4 @@ jekyll-crosspost_to_medium:
   cache: .jekyll-crosspost_to_medium
   status: draft
   text: '<p><i>This article was originally posted on <a href="{{ url }}" rel="canonical">george-stathis.com</a>.</i></p>'
+  backdate: true

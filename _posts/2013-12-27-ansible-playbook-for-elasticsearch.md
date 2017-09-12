@@ -8,7 +8,6 @@ categories:
 - devops
 type: post
 disqus: true
-crosspost_to_medium: true
 ---
 
 Over the fall, we tried out [Ansible](http://www.ansibleworks.com/) for some of our latest machine provisioning needs and we liked our experience with it. We had been using [Opscode Chef](https://wiki.opscode.com/) up until recently but a lot of the team members were getting stuck climbing its steep learning curve. We had also given [Juju](https://juju.ubuntu.com/) a spin but the cycle of making changes and testing them was simply too slow and painful to continue using it.
