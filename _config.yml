@@ -23,3 +23,9 @@ exclude:
 # Details for the RSS feed generator
 url:            '/'
 author:         'George Stathis'
+
+# See https://github.com/aarongustafson/jekyll-crosspost-to-medium
+jekyll-crosspost_to_medium:
+  cache: .jekyll-crosspost_to_medium
+  status: draft
+  text: '<p><i>This article was originally posted on <a href="{{ url }}" rel="canonical">george-stathis.com</a>.</i></p>'
