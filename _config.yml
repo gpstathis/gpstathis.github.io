@@ -10,7 +10,7 @@ permalink: /:year/:month/:day/:title/
 excerpt_separator: <!--more-->
 logo: false
 paginate: 15
-baseurl: '/'
+baseurl: ''
 domain_name: 'http://george-stathis.com'
 google_analytics: 'UA-7528444-1'
 gems:
